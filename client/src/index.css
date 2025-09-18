@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+body {
+  @apply bg-white;
+}
+
+.page {
+  @apply px-20 py-5;
+  height: calc(100vh - 90px);
+}
+
+h1 {
+  @apply text-3xl font-semibold text-gray-900;
+}
+
+h2 {
+  @apply text-2xl font-bold text-gray-900;
+}
+
+h3 {
+  @apply text-xl font-semibold text-gray-900;
+}
+
+p {
+  @apply text-sm font-medium text-gray-500;
+}
+
+.btn {
+  @apply px-5 py-2.5 font-medium text-sm text-center text-white bg-blue-700 hover:bg-blue-800 rounded-lg cursor-pointer;
+}
+
+.inputBox {
+  @apply p-2.5 pl-10 bg-gray-50 border border-gray-300 text-sm text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500;
+}
+
+.active {
+  @apply text-blue-600;
+}
