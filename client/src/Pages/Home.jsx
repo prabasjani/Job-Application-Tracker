@@ -21,7 +21,7 @@ const Home = () => {
   return (
     <div className="page">
       {/* Application Info */}
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid sm:grid-cols-3 gap-2.5 sm:gap-5">
         <HomeCard
           count={applicationData?.length || 0}
           title="Total Applies"
@@ -42,7 +42,12 @@ const Home = () => {
       {/* Recent Applies */}
       <div className="mt-4">
         <div className="flex items-center justify-between mb-2.5">
-          <h3>Recent Applies (Last 5 Applications)</h3>
+          <h3 className="flex items-center gap-3">
+            Recent Applies{" "}
+            <span className="hidden sm:block !text-gray-500">
+              (Last 5 Applications)
+            </span>
+          </h3>
           <Link
             to="/all-applies"
             className="text-blue-600 hover:text-blue-700 text-sm font-semibold tracking-wider hover:underline underline-offset-4"

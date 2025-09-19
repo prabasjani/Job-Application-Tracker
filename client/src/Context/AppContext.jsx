@@ -15,7 +15,7 @@ const AppContextProvider = ({ children }) => {
       );
       setApplicationData(response?.data?.data);
     } catch (error) {
-      toast.success(error?.message);
+      toast.error(error?.message);
     }
   };
 

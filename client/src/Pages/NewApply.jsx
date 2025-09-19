@@ -39,7 +39,7 @@ const NewApply = () => {
         <div className="grid gap-6 mb-6 md:grid-cols-2">
           <div>
             <label
-              for="company_name"
+              htmlFor="company_name"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Company name
@@ -55,7 +55,7 @@ const NewApply = () => {
           </div>
           <div>
             <label
-              for="job_role"
+              htmlFor="job_role"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Job Role
@@ -71,7 +71,7 @@ const NewApply = () => {
           </div>
           <div>
             <label
-              for="email_address"
+              htmlFor="email_address"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Email_Address
@@ -87,7 +87,7 @@ const NewApply = () => {
           </div>
           <div>
             <label
-              for="phone"
+              htmlFor="phone"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Phone number
@@ -104,17 +104,17 @@ const NewApply = () => {
           </div>
           <div>
             <label
-              for="from"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              htmlFor="from"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Job From
             </label>
             <select
               id="from"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 appearance-none"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 appearance-none"
               onChange={(e) => setFrom(e.target.value)}
             >
-              <option selected>Refered From</option>
+              <option defaultValue={""}>Refered From</option>
               <option value="LinkedIn">LinkedIn</option>
               <option value="Naukri">Naukri</option>
               <option value="Friend">Friend</option>
@@ -132,7 +132,7 @@ const NewApply = () => {
             />
           </div>
           <label
-            for="remember"
+            htmlFor="remember"
             className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
           >
             I agree with the{" "}

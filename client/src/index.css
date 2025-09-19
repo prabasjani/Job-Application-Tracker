@@ -5,8 +5,8 @@ body {
 }
 
 .page {
-  @apply px-20 py-5;
-  height: calc(100vh - 90px);
+  @apply px-5 sm:px-20 py-5 h-[calc(100vh-110px)] sm:h-[calc(100vh-90px)];
+  /* height: calc(100vh - 90px); */
 }
 
 h1 {
@@ -14,7 +14,7 @@ h1 {
 }
 
 h2 {
-  @apply text-2xl font-bold text-gray-900;
+  @apply text-lg sm:text-2xl font-bold text-gray-900;
 }
 
 h3 {
