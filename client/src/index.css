@@ -1,1 +1,67 @@
-@import "tailwindcss"
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
+html {
+  scroll-behavior: smooth;
+}
+body {
+  @apply bg-slate-950;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  @apply text-5xl font-bold text-neutral-200 tracking-wider;
+}
+h2 {
+  @apply text-4xl font-bold text-neutral-200 tracking-wider;
+}
+h3 {
+  @apply text-3xl font-semibold text-neutral-200 tracking-wider;
+}
+h4 {
+  @apply text-2xl font-semibold text-neutral-200 tracking-wider;
+}
+h5 {
+  @apply text-lg font-semibold text-neutral-200 tracking-wider;
+}
+
+p {
+  @apply text-sm text-neutral-400 font-medium tracking-wider leading-7;
+}
+
+.active {
+  @apply text-pink-500 transform -translate-y-0.5 transition-transform duration-150;
+}
+
+.page {
+  @apply h-screen px-20 pt-24 pb-10 overflow-hidden;
+}
+
+.btn {
+  @apply px-6 py-2 text-sm text-neutral-200 uppercase font-semibold rounded-lg cursor-pointer;
+}
+
+.label-style {
+  @apply block mb-2 text-sm font-medium text-neutral-400;
+}
+
+.input-style {
+  @apply bg-slate-900 border border-slate-800 text-neutral-200 text-sm rounded-lg focus:ring-pink-500 focus:border-pink-500 block w-full p-2.5;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #020618;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-900;
+  border-radius: 10px;
+}
