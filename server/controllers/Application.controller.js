@@ -50,8 +50,13 @@ export const eachApplication = async (req, res) => {
 export const newApplication = async (req, res) => {
   const { role, company, email, mobile, from } = req.body;
   try {
-    const application = await ApplicationModel.findOne({ company });
-    const applicationCount = await ApplicationModel.countDocuments();
+    const application = await ApplicationModel.findOne({
+      company,
+      userId: req.user,
+    });
+    const applicationCount = await ApplicationModel.countDocuments({
+      userId: req.user,
+    });
 
     if (application) {
       return res

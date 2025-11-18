@@ -11,11 +11,14 @@ import NewApply from "./Pages/NewApply";
 import Auth from "./Pages/Auth";
 import AppContextProvider from "./Context/AppContext";
 import FollowUp from "./Pages/FollowUp";
+import { Toaster } from "sonner";
+import TermsConditions from "./Pages/TermsConditions";
 
 const App = () => {
   return (
     <div>
       <AppContextProvider>
+        <Toaster position="top-right" richColors />
         <Navbar />
         <Routes>
           <Route path="/auth" element={<Auth />} />
@@ -25,6 +28,7 @@ const App = () => {
             <Route path="/new-apply" element={<NewApply />} />
             <Route path="/follow-ups" element={<FollowUp />} />
             <Route path="/applied/:id" element={<EachApply />} />
+            <Route path="/terms&conditions" element={<TermsConditions />} />
             <Route path="*" element={<Missing />} />
           </Route>
         </Routes>

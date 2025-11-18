@@ -1,6 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
+import { toast } from "sonner";
+import api from "../../Utils/api";
 
 const Signup = ({ setActiveTab }) => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+    try {
+      if (!username) {
+        toast.error("Please Enter Username!");
+      } else if (!email) {
+        toast.error("Please Enter Email Address!");
+      } else if (!password) {
+        toast.error("Please Enter Password!");
+      } else if (password.length < 8) {
+        toast.error("Password must be 8 Characters!");
+      } else {
+        const response = await api.post("/user/register", {
+          username,
+          email,
+          password,
+        });
+        toast.success(response?.data?.message);
+        setActiveTab("login");
+      }
+    } catch (error) {
+      toast.error(error?.response?.data?.message);
+    }
+  };
   return (
     <div>
       <div className="pb-3 border-b border-slate-800">
@@ -12,7 +42,7 @@ const Signup = ({ setActiveTab }) => {
         </p>
       </div>
 
-      <form className="mt-4">
+      <form className="mt-4" onSubmit={handleSignUp}>
         <div className="flex flex-col mb-3">
           <label htmlFor="username" className="label-style">
             Username
@@ -22,6 +52,7 @@ const Signup = ({ setActiveTab }) => {
             id="username"
             placeholder="John Doe"
             className="input-style"
+            onChange={(e) => setUsername(e.target.value)}
           />
         </div>
 
@@ -34,6 +65,7 @@ const Signup = ({ setActiveTab }) => {
             id="email"
             placeholder="john@gmail.com"
             className="input-style"
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
@@ -46,6 +78,7 @@ const Signup = ({ setActiveTab }) => {
             id="password"
             placeholder="*************"
             className="input-style"
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
 

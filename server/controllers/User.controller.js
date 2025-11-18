@@ -65,8 +65,8 @@ export const login = async (req, res) => {
     // Send the token securely without storing the token in JS
     res.cookie("token", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV == "production",
-      sameSite: "strict",
+      secure: process.env.NODE_ENV == "production", // false
+      sameSite: process.env.NODE_ENV == "production" ? "none" : "lax", // "lax"
       maxAge: 24 * 60 * 60 * 1000,
     });
 
