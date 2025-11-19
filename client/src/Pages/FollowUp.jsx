@@ -5,6 +5,7 @@ import NoApplicationAlert from "../Components/NoApplicationAlert";
 
 const FollowUp = () => {
   const { applicationData } = useContext(AppContext);
+  const pathname = window.location.pathname;
   // Days Diffrent
   const daysDiff = (date) => {
     const today = new Date();
@@ -29,7 +30,7 @@ const FollowUp = () => {
         </Link>
       </div>
 
-      <div className="relative overflow-y-scroll max-h-[375px] shadow-md border border-slate-800 rounded-lg">
+      <div className="relative overflow-y-scroll max-h-[675px] sm:max-h-[375px] shadow-md border border-slate-800 rounded-lg">
         {followUpPosts.length > 0 ? (
           <table className="w-full text-sm text-left rtl:text-right text-gray-400">
             <thead className="text-xs text-neutral-300 uppercase ">
@@ -118,7 +119,15 @@ const FollowUp = () => {
             </tbody>
           </table>
         ) : (
-          <NoApplicationAlert />
+          <div
+            className={` ${
+              pathname == "/follow-ups"
+                ? "h-[674px] sm:h-[370px]"
+                : "min-h-[280px]"
+            } flex items-center justify-center`}
+          >
+            <NoApplicationAlert />
+          </div>
         )}
       </div>
     </div>

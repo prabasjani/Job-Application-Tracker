@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const NoApplicationAlert = () => {
   return (
-    <div className="flex flex-col gap-5 items-center justify-center min-h-[275px]">
+    <div className="flex flex-col gap-5 items-center justify-center h-full">
       <BsDatabaseFillX size={100} className="text-red-400 animate-bounce" />
       <div className="text-center">
         <h2>No Applications found!</h2>

@@ -37,10 +37,13 @@ const AppContextProvider = ({ children }) => {
 
   useEffect(() => {
     fetchCurrUser();
+  }, []);
+
+  useEffect(() => {
     if (isAuth) {
       fetchAllApplications();
     }
-  }, [isAuth, applicationData]);
+  }, [isAuth]);
   const contextValues = {
     isAuth,
     setIsAuth,
@@ -48,6 +51,7 @@ const AppContextProvider = ({ children }) => {
     currUser,
     fetchCurrUser,
     applicationData,
+    fetchAllApplications,
     loading,
   };
   return (

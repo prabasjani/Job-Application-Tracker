@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { toast } from "sonner";
 import api from "../Utils/api";
 import { Link, useNavigate } from "react-router-dom";
+import { AppContext } from "../Context/AppContext";
 
 const NewApply = () => {
+  const { fetchAllApplications } = useContext(AppContext);
   const [role, setRole] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
@@ -23,6 +25,9 @@ const NewApply = () => {
         from,
       });
       toast.success(response?.data?.message);
+      if (response?.data?.success) {
+        fetchAllApplications();
+      }
       navigate("/applies");
     } catch (error) {
       toast.error(error?.response?.data?.message);
@@ -34,7 +39,7 @@ const NewApply = () => {
         Apply New Job Post
       </h3>
       <form onSubmit={handleSubmit}>
-        <div className="grid gap-6 mb-6 grid-cols-2">
+        <div className="grid gap-6 mb-6 sm:grid-cols-2">
           <div>
             <label htmlFor="company_name" className="label-style">
               Company name

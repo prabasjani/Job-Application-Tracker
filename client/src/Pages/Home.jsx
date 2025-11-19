@@ -20,7 +20,7 @@ const Home = () => {
   const pendingCount = pendingApplies.length;
   return (
     <div className="page">
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid sm:grid-cols-3 gap-5">
         <HomeCard
           count={totalApplies}
           title="Total Applies"
@@ -46,12 +46,14 @@ const Home = () => {
               (Last 5 Applications)
             </span>
           </h5>
-          <Link
-            to="/applies"
-            className="text-pink-400 hover:text-pink-500 text-sm font-semibold tracking-wider hover:underline underline-offset-4"
-          >
-            View All
-          </Link>
+          {totalApplies > 0 && (
+            <Link
+              to="/applies"
+              className="text-pink-400 hover:text-pink-500 text-sm font-semibold tracking-wider hover:underline underline-offset-4"
+            >
+              View All
+            </Link>
+          )}
         </div>
         <ApplicationTable slice={5} />
       </div>

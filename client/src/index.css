@@ -10,19 +10,19 @@ body {
 }
 
 h1 {
-  @apply text-5xl font-bold text-neutral-200 tracking-wider;
+  @apply text-3xl sm:text-5xl font-bold text-neutral-200 tracking-wider;
 }
 h2 {
-  @apply text-4xl font-bold text-neutral-200 tracking-wider;
+  @apply text-2xl sm:text-4xl font-bold text-neutral-200 tracking-wider;
 }
 h3 {
-  @apply text-3xl font-semibold text-neutral-200 tracking-wider;
+  @apply text-xl sm:text-3xl font-semibold text-neutral-200 tracking-wider;
 }
 h4 {
-  @apply text-2xl font-semibold text-neutral-200 tracking-wider;
+  @apply text-lg sm:text-2xl font-semibold text-neutral-200 tracking-wider;
 }
 h5 {
-  @apply text-lg font-semibold text-neutral-200 tracking-wider;
+  @apply text-base sm:text-lg font-semibold text-neutral-200 tracking-wider;
 }
 
 p {
@@ -34,7 +34,7 @@ p {
 }
 
 .page {
-  @apply h-screen px-20 pt-24 pb-10 overflow-hidden;
+  @apply relative h-screen px-5 sm:px-20 pt-20 sm:pt-24 pb-10 overflow-hidden;
 }
 
 .btn {
@@ -51,17 +51,19 @@ p {
 
 /* width */
 ::-webkit-scrollbar {
+  @apply hidden sm:block;
   width: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
+  @apply hidden sm:block;
   box-shadow: inset 0 0 5px #020618;
   border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  @apply bg-slate-900;
+  @apply bg-slate-900 hidden sm:block;
   border-radius: 10px;
 }

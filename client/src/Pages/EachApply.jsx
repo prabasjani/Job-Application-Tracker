@@ -34,9 +34,9 @@ const EachApply = () => {
   };
   return (
     <div className="page flex items-center justify-center">
-      <div className="grid grid-cols-2 gap-x-10 p-10 rounded-lg border  border-slate-800 w-[90%]">
+      <div className="grid grid-cols-2 gap-x-5 sm:gap-x-10 p-5 sm:p-10 rounded-lg border border-slate-800 w-full sm:w-[90%]">
         <div className="col space-y-3">
-          <h2 className="text-gray-400!">Position</h2>
+          <h3 className="text-gray-400!">Position</h3>
           <h4 className="text-gray-400!">Company</h4>
           <h5 className="text-gray-400!">Email Address</h5>
           <h5 className="text-gray-400!">Mobile</h5>
@@ -44,7 +44,7 @@ const EachApply = () => {
           <h5 className="text-gray-400!">From</h5>
           <h5 className="text-gray-400!">Status</h5>
           <button
-            className="btn bg-pink-400 hover:bg-pink-500 w-full"
+            className="btn hidden sm:block bg-pink-400 hover:bg-pink-500 w-full"
             onClick={() => handleUpdate(currentApplication?._id)}
           >
             Update to{" "}
@@ -54,9 +54,20 @@ const EachApply = () => {
               ? "Responsed"
               : "Up-to date"}
           </button>
+
+          <button
+            className="btn sm:hidden bg-pink-400 hover:bg-pink-500 w-full"
+            onClick={() => handleUpdate(currentApplication?._id)}
+          >
+            {currentApplication?.status == "applied"
+              ? "Pending"
+              : currentApplication?.status == "pending"
+              ? "Responsed"
+              : "Up-to date"}
+          </button>
         </div>
         <div className="col space-y-3">
-          <h2>{capitalized(currentApplication?.role)}</h2>
+          <h3>{capitalized(currentApplication?.role)}</h3>
           <h4>{capitalized(currentApplication?.company)}</h4>
           <h5>{currentApplication?.email}</h5>
           <h5>

@@ -4,7 +4,7 @@ import { privacyPolicies, termsConditions } from "../Utils/terms-conditions";
 const TermsConditions = () => {
   return (
     <div className="page">
-      <div className="overflow-y-scroll h-[440px]">
+      <div className="overflow-y-scroll h-full sm:h-[440px]">
         <div className="">
           <h3 className="text-pink-500!">Terms & Conditions</h3>
           <div className="space-y-4 mt-4">
